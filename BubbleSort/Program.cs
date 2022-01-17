@@ -1,14 +1,14 @@
 ﻿using System.Diagnostics;
 
-namespace SelectSort;
+namespace BubbleSort;
 
 class Program
 {
     public static void Main()
     {
-        int[] arr = new int[10];
+        int[] arr = new int[100000];
 
-        Random r =new Random();
+        Random r = new Random();
 
         for (int i = 0; i < arr.Length; i++)
         {
@@ -18,30 +18,25 @@ class Program
         Console.WriteLine(String.Join(", ", Sort(arr)));
     }
 
-    public static int[] Sort(int [] arr)
+    public static int[] Sort(int[] arr)
     {
         Stopwatch watch = new Stopwatch();
 
         watch.Start();
 
-        int min;
         int temp;
 
         for (int i = 0; i < arr.Length; i++)
         {
-            min = i;
-
-            for (int j = i + 1; j < arr.Length; j++)
+            for (int j = 0; j < arr.Length - 1 - i; j++)
             {
-                if (arr[j] < arr[min])
+                if (arr[j] > arr[j + 1])
                 {
-                    min = j;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
             }
-
-            temp = arr[min];
-            arr[min] = arr[i];
-            arr[i] = temp;
         }
 
         watch.Stop();

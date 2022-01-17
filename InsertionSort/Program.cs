@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        int[] arr = new int[10];
+        int[] arr = new int[100000];
 
         Random r = new Random();
 
@@ -23,6 +23,7 @@ public class Program
         Stopwatch watch = new Stopwatch();
 
         watch.Start();
+
         int index;
         int currentNumber;
 
@@ -33,12 +34,13 @@ public class Program
 
             while (index > 0 && currentNumber < arr[index - 1])
             {
-                arr[i] = arr[i - 1];
-                index--; 
+                arr[index] = arr[index - 1];
+                index--;
             }
 
             arr[index] = currentNumber;
         }
+
         watch.Stop();
 
         Console.WriteLine($"Elapsed time: {watch.Elapsed}");
