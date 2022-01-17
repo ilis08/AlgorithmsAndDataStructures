@@ -1,10 +1,12 @@
-﻿namespace SelectSort;
+﻿using System.Diagnostics;
+
+namespace SelectSort;
 
 class Program
 {
     public static void Main()
     {
-        int[] arr = new int[10];
+        int[] arr = new int[50000];
 
         Random r =new Random();
 
@@ -18,6 +20,10 @@ class Program
 
     public static int[] Sort(int [] arr)
     {
+        Stopwatch watch = new Stopwatch();
+
+        watch.Start();
+
         int min;
         int temp;
 
@@ -37,6 +43,11 @@ class Program
             arr[i] = arr[min];
             arr[min] = temp;
         }
+
+        watch.Stop();
+
+        Console.WriteLine($"Elapsed time: {watch.Elapsed}");
+
         return arr;
     }
 }
