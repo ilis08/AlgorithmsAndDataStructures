@@ -8,40 +8,43 @@ class Program
 
     public static void Main()
     {
-        Console.WriteLine(Fibonachi(10));
-    }
+        int[] arr = new int[1000];
 
-    public static int Fibonachi(int n)
-    {
-        if (n == 0 || n == 1) return n;
+        Random r = new Random();
 
-        return Fibonachi(n - 1) + Fibonachi(n - 2);
-    }
-
-    public static int FactorielRecursion(int n)
-    {
-        if (n == 1)
+        for (int i = 0; i < arr.Length; i++)
         {
-            return 1;
+            arr[i] = r.Next(1, 50);
         }
 
-        return n * FactorielRecursion(n - 1);
+        Console.WriteLine(String.Join(", ", Sort(arr)));
     }
 
-    public static int FactorielFor(int n)
+    public static int[] Sort(int[] arr)
     {
-        int value = n;
+        Stopwatch watch = new Stopwatch();
 
-        if (n == 1)
+        watch.Start();
+
+        int temp;
+
+        for (int i = 0; i < arr.Length; i++)
         {
-            return 1;
+            for (int j = 0; j < arr.Length - 1 - i; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
 
-        for (int i = n - 1; i >= 1; i--)
-        {
-            value = value * i;
-        }
+        watch.Stop();
 
-        return value;
+        Console.WriteLine($"Elapsed time: {watch.Elapsed}");
+
+        return arr;
     }
 }

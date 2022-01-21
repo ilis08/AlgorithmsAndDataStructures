@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectSort", "SelectSort\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertionSort", "InsertionSort\InsertionSort.csproj", "{43734DC4-C1B4-40C1-B0AE-8DB9337A9188}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factoriel", "Factoriel\Factoriel.csproj", "{93B0401F-E385-4951-98C9-C357E07A16CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbleSort", "Factoriel\BubbleSort.csproj", "{93B0401F-E385-4951-98C9-C357E07A16CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
