@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        int[] arr = new int[100000];
+        int[] arr = new int[100];
 
         Random r = new Random();
 
@@ -18,6 +18,7 @@ public class Program
         Console.WriteLine(String.Join(", ", Sort(arr)));
     }
 
+
     public static int [] Sort(int[] arr)
     {
         Stopwatch watch = new Stopwatch();
@@ -27,7 +28,7 @@ public class Program
         int index;
         int currentNumber;
 
-        for (int i = 0;i < arr.Length; i++)
+        for (int i = 0; i < arr.Length; i++)
         {
             index = i;
             currentNumber = arr[i];

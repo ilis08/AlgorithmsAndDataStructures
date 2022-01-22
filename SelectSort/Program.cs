@@ -6,13 +6,13 @@ class Program
 {
     public static void Main()
     {
-        int[] arr = new int[10];
+        int[] arr = new int[100000];
 
         Random r =new Random();
 
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = r.Next(1, 50);
+            arr[i] = r.Next(1, 1000);
         }
 
         Console.WriteLine(String.Join(", ", Sort(arr)));
@@ -24,8 +24,8 @@ class Program
 
         watch.Start();
 
-        int min;
         int temp;
+        int min;
 
         for (int i = 0; i < arr.Length; i++)
         {
